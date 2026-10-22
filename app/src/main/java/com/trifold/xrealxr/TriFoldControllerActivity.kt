@@ -232,8 +232,7 @@ class TriFoldControllerActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.MATCH_PARENT, 0, 1f
             )
             addView(TextView(context).apply {
-                text = "3DoF Laser Mode: Point TriFold at any floating window & tap/drag here to click/scroll
-" +
+                text = "3DoF Laser Mode: Point TriFold at any floating window & tap/drag here to click/scroll\n" +
                        "Trackpad Mode: 1-Finger Touch interacts with app | 2-Finger Drag moves window in 3D space"
                 gravity = Gravity.CENTER
             })
