@@ -38,6 +38,15 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    lint {
+        // ShizukuSpatialManager deliberately reaches MotionEvent.setDisplayId
+        // through HiddenApiBypass runtime exemptions (addHiddenApiExemptions
+        // runs at init). Lint cannot see runtime exemptions, so it flags the
+        // reflective access as BlockedPrivateApi and fails the release build.
+        // Disable that single check; every other lint check stays on.
+        disable += setOf("BlockedPrivateApi")
+    }
 }
 
 dependencies {
